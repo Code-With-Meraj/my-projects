@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -50,27 +49,27 @@ const RegistrationForm = () => {
 
   const handleInputChange = (event) => {
     const { id, value } = event.target;
-  
+
     if (id === "mobile") {
-      const cleanedValue = value.replace(/\D/g, ""); 
+      const cleanedValue = value.replace(/\D/g, "");
       const formattedValue = cleanedValue
-        .replace(/(\d{3})(\d{3})(\d{1,4})/, "$1-$2-$3") 
-        .substr(0, 12); 
+        .replace(/(\d{3})(\d{3})(\d{1,4})/, "$1-$2-$3")
+        .substr(0, 12);
       setFormData((prev) => ({ ...prev, mobile: formattedValue }));
     } else if (["firstName", "middleName", "lastName"].includes(id)) {
-      const formattedValue = value.replace(/[^a-zA-Z\s]/g, ""); 
+      const formattedValue = value.replace(/[^a-zA-Z\s]/g, "");
       const capitalizedValue = formattedValue
-        .split(" ") 
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
+        .split(" ")
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
         .join(" ");
       setFormData((prev) => ({ ...prev, [id]: capitalizedValue }));
     } else {
       setFormData((prev) => ({ ...prev, [id]: value }));
     }
   };
-  
-  
-  
+
   const handleRadioChange = (e) => {
     const { value } = e.target;
     setLastClickedRadio(lastClickedRadio === value ? null : value);
@@ -144,39 +143,38 @@ const RegistrationForm = () => {
       <form onSubmit={handleSubmit}>
         <h3>Personal Information</h3>
         <div className="row">
-        <div className="form-group">
-  <label htmlFor="firstName">First Name</label>
-  <input
-    type="text"
-    id="firstName"
-    placeholder="Enter first name"
-    value={formData.firstName}
-    onChange={handleInputChange}
-  />
-</div>
+          <div className="form-group">
+            <label htmlFor="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              placeholder="Enter first name"
+              value={formData.firstName}
+              onChange={handleInputChange}
+            />
+          </div>
 
-<div className="form-group">
-  <label htmlFor="middleName">Middle Name</label>
-  <input
-    type="text"
-    id="middleName"
-    placeholder="Enter middle name"
-    value={formData.middleName}
-    onChange={handleInputChange}
-  />
-</div>
+          <div className="form-group">
+            <label htmlFor="middleName">Middle Name</label>
+            <input
+              type="text"
+              id="middleName"
+              placeholder="Enter middle name"
+              value={formData.middleName}
+              onChange={handleInputChange}
+            />
+          </div>
 
-<div className="form-group">
-  <label htmlFor="lastName">Last Name</label>
-  <input
-    type="text"
-    id="lastName"
-    placeholder="Enter last name"
-    value={formData.lastName}
-    onChange={handleInputChange}
-  />
-</div>
-
+          <div className="form-group">
+            <label htmlFor="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              placeholder="Enter last name"
+              value={formData.lastName}
+              onChange={handleInputChange}
+            />
+          </div>
         </div>
         <br />
 
