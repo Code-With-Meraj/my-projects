@@ -1,0 +1,120 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+.form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1,
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: steelblue;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.mobile-number-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+#country-code {
+  width: 30%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+#mobile {
+  width: 70%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+select[multiple] {
+  width: 200px;
+  height: auto;
+}
+
+input[type="checkbox"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#comments {
+  height: 10vh;
+}
+
+.homosapiens {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.row .form-group {
+  flex: 1;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.bouncy {
+  animation: bounce 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
