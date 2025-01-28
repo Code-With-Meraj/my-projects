@@ -72,11 +72,11 @@ const RegistrationForm = () => {
 
   const handleRadioChange = (e) => {
     const { value } = e.target;
-    setLastClickedRadio(lastClickedRadio === value ? null : value);
-    setFormData({
-      ...formData,
-      gender: lastClickedRadio === value ? "" : value,
-    });
+
+    setFormData((prev) => ({
+      ...prev,
+      gender: prev.gender === value ? "" : value,
+    }));
   };
 
   const handleCheckboxChange = (e) => {
@@ -233,7 +233,7 @@ const RegistrationForm = () => {
 
         <h3>Gender</h3>
         <div className="form-group">
-          <div className=" homosapiens">
+          <div className="homosapiens">
             <label>
               <input
                 type="radio"
@@ -241,6 +241,7 @@ const RegistrationForm = () => {
                 name="gender"
                 checked={formData.gender === "male"}
                 onChange={handleRadioChange}
+                onDoubleClick={() => setFormData({ ...formData, gender: "" })}
               />
               Male
             </label>
@@ -251,6 +252,7 @@ const RegistrationForm = () => {
                 name="gender"
                 checked={formData.gender === "female"}
                 onChange={handleRadioChange}
+                onDoubleClick={() => setFormData({ ...formData, gender: "" })}
               />
               Female
             </label>
@@ -261,11 +263,13 @@ const RegistrationForm = () => {
                 name="gender"
                 checked={formData.gender === "other"}
                 onChange={handleRadioChange}
+                onDoubleClick={() => setFormData({ ...formData, gender: "" })}
               />
               Other
             </label>
           </div>
         </div>
+
         <h3>Address</h3>
         <div className="form-group">
           <label htmlFor="streetAddress">Street Address</label>
