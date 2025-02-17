@@ -118,3 +118,27 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+/* App.css */
+.next-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height */
+  text-align: center;
+  background-color: #f4f4f4; /* Light gray background */
+}
+
+.next-page-container h1 {
+  font-size: 2rem;
+  color: #333; /* Dark gray text */
+  margin-bottom: 10px;
+}
+
+.next-page-container p {
+  font-size: 1.2rem;
+  color: #555; /* Medium gray text */
+  max-width: 500px;
+  line-height: 1.6;
+}
